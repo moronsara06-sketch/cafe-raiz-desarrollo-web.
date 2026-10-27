@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Café Raíz: una página de ejemplo para practicar HTML, CSS, Flexbox, Grid y JavaScript.">
+  <title>Café Raíz | Un buen café, cerca de ti</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="encabezado" id="inicio">
+    <a class="marca" href="#inicio" aria-label="Café Raíz, inicio"><span class="marca-icono">☕</span><span>Café <b>Raíz</b></span></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <nav class="navegacion" id="navegacion">
+      <a href="#nosotros">Nosotros</a><a href="#productos">Productos</a><a href="#precios">Precios</a><a href="#contacto" class="nav-contacto">Contáctanos</a>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="hero-texto">
+        <p class="etiqueta">CAFÉ LOCAL · HECHO CON CUIDADO</p>
+        <h1>Un buen café<br><span>cambia el día.</span></h1>
+        <p class="hero-descripcion">Descubre el sabor del café colombiano, cultivado con dedicación y preparado para acompañar tus mejores momentos.</p>
+        <div class="hero-acciones"><a class="boton boton-principal" href="#productos">Ver productos</a><a class="enlace-simple" href="#nosotros">Conoce nuestra historia →</a></div>
+        <div class="dato-hero"><span>☀</span><p><b>De nuestra tierra a tu taza</b><br><small>Café colombiano seleccionado</small></p></div>
+      </div>
+      <div class="hero-imagen"><img src="assets/cafe-hero.svg" alt="Taza de café colombiano sobre una mesa"><div class="sello">100%<br><small>colombiano</small></div><div class="imagen-texto">Un momento para ti</div></div>
+    </section>
+    <section class="beneficios" aria-label="Características del café"><div><span>🌱</span><p><b>Origen responsable</b><small>Apoyamos productores locales</small></p></div><div><span>☕</span><p><b>Tueste fresco</b><small>Más aroma en cada taza</small></p></div><div><span>♡</span><p><b>Hecho con cariño</b><small>Detalles que se sienten</small></p></div></section>
+    <section class="seccion nosotros" id="nosotros"><div class="seccion-titulo"><p class="etiqueta">NUESTRA HISTORIA</p><h2>El café sabe mejor<br>cuando conoces su origen.</h2></div><p class="texto-nosotros">Café Raíz nace de una idea sencilla: compartir el sabor de nuestra tierra. Elegimos granos colombianos y cuidamos cada preparación para ofrecer una experiencia cercana, honesta y deliciosa.</p></section>
+    <section class="seccion productos" id="productos"><div class="encabezado-seccion"><div><p class="etiqueta">PARA CADA MOMENTO</p><h2>Nuestros favoritos</h2></div><a class="enlace-simple" href="#precios">Ver todos los precios →</a></div>
+      <div class="productos-grid">
+        <article class="producto-card"><div class="producto-foto"><img src="assets/latte.svg" alt="Latte de la casa"><span>Más pedido</span></div><div class="producto-info"><h3>Latte de la casa</h3><p>Espresso suave con leche cremosa.</p><div class="producto-pie"><b>$8.500</b><button class="agregar" data-producto="Latte de la casa" data-precio="8500">Agregar +</button></div></div></article>
+        <article class="producto-card"><div class="producto-foto"><img src="assets/americano.svg" alt="Café americano"><span>Clásico</span></div><div class="producto-info"><h3>Americano</h3><p>Café intenso, sencillo y aromático.</p><div class="producto-pie"><b>$6.000</b><button class="agregar" data-producto="Americano" data-precio="6000">Agregar +</button></div></div></article>
+        <article class="producto-card"><div class="producto-foto"><img src="assets/coldbrew.svg" alt="Cold brew frío"><span>Frío</span></div><div class="producto-info"><h3>Cold brew</h3><p>Extracción lenta, sabor refrescante.</p><div class="producto-pie"><b>$9.000</b><button class="agregar" data-producto="Cold brew" data-precio="9000">Agregar +</button></div></div></article>
+      </div>
+      <p class="mensaje-carrito" id="mensajeCarrito" aria-live="polite">Elige un producto para agregarlo a tu pedido.</p>
+    </section>
+    <section class="franja"><div><p class="etiqueta">UNA PAUSA MERECIDA</p><h2>Tu próxima taza te está esperando.</h2></div><a href="#contacto" class="boton boton-claro">Hablemos</a></section>
+    <section class="seccion precios" id="precios"><div class="encabezado-seccion"><div><p class="etiqueta">CUENTA RÁPIDA</p><h2>Calcula tu pedido</h2></div><p class="texto-corto">Selecciona una cantidad para conocer el total estimado.</p></div><div class="calculadora"><label for="cantidad">Cantidad de cafés</label><div class="controles-cantidad"><button id="menos" aria-label="Restar uno">−</button><input type="number" id="cantidad" min="1" max="20" value="1"><button id="mas" aria-label="Sumar uno">+</button></div><label for="tipoCafe">Tipo de café</label><select id="tipoCafe"><option value="6000">Americano — $6.000</option><option value="8500" selected>Latte de la casa — $8.500</option><option value="9000">Cold brew — $9.000</option></select><div class="total"><span>Total estimado</span><strong id="total">$8.500</strong></div><button id="calcular" class="boton boton-principal boton-ancho">Calcular total</button><p id="resultadoCalculo" class="resultado" aria-live="polite"></p></div></section>
+    <section class="seccion contacto" id="contacto"><div><p class="etiqueta">ESCRÍBENOS</p><h2>¿Tienes alguna pregunta?</h2><p>Déjanos tus datos y un mensaje. Este formulario es una demostración educativa.</p></div><form id="formContacto"><label for="nombre">Nombre</label><input id="nombre" name="nombre" type="text" placeholder="Tu nombre" required minlength="2"><label for="correo">Correo electrónico</label><input id="correo" name="correo" type="email" placeholder="nombre@correo.com" required><label for="mensaje">Mensaje</label><textarea id="mensaje" name="mensaje" rows="3" placeholder="¿En qué podemos ayudarte?" required></textarea><button class="boton boton-principal" type="submit">Enviar mensaje</button><p id="mensajeFormulario" class="resultado" aria-live="polite"></p></form></section>
+  </main>
+  <footer class="pie"><a class="marca marca-pie" href="#inicio"><span class="marca-icono">☕</span><span>Café <b>Raíz</b></span></a><p>Una página de práctica hecha con HTML, CSS y JavaScript.</p><small>© 2026 Café Raíz · Proyecto educativo</small></footer>
+</body>
+</html>
